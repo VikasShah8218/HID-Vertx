@@ -1,0 +1,18 @@
+pip install tomli-w tomlkit
+pip install aerich
+
+aerich init -t db.database.TORTOISE_ORM
+aerich init-db
+aerich migrate
+aerich upgrade
+
+python manage.py makemigrations --> aerich migrate
+
+python manage.py migrate --> aerich upgrade
+
+
+conda activate anpr_env
+python main.py
+
+TRUNCATE TABLE public.vehicles RESTART IDENTITY CASCADE;
+TRUNCATE TABLE public.plates RESTART IDENTITY CASCADE;
